@@ -112,6 +112,8 @@ public class Karatsuba {
 			return (z2 * power(10, 2*m2) + (z1 * power(10, m2)) + z0);
 		}
 	}
+
+	
 	
 	
 
@@ -120,6 +122,6 @@ public class Karatsuba {
 		// System.out.println(karatsuba(200, 200));
 		// System.out.println(karatsuba(12345, 6789));
 		// System.out.println(karatsuba(2358925, 1259174));
-		System.out.println(karatsuba(123456789, 987654321));
+		System.out.println(karatsuba(1234586789, 987654321));
 	}
 }

@@ -113,14 +113,10 @@ public class Karatsuba {
 		}
 	}
 
-	
-	
-	
-
 	public static void main(String[] args) {
 		
 		// System.out.println(karatsuba(200, 200));
-		// System.out.println(karatsuba(12345, 6789));
+		System.out.println(karatsuba(12345, 6789));
 		// System.out.println(karatsuba(2358925, 1259174));
 		System.out.println(karatsuba(1234586789, 987654321));
 	}

@@ -30,7 +30,7 @@ public class KaratsubaTriplo {
 	}
 
 	// public static String karatsuba(String x, String y, String z) {
-	// 	return null;
+	// return null;
 
 	// }
 
@@ -39,13 +39,8 @@ public class KaratsubaTriplo {
 		if (x.length() == 1 || y.length() == 1) {
 			int prod = Integer.parseInt(x) * Integer.parseInt(y);
 			return String.valueOf(prod);
-		
-		} else if (x.charAt(0) == '0' || y.charAt(0) == '0') {
-		return karatsuba(x.substring(1), y.substring(1));
-		}
 
-		// Recursive case: Decompose the problem by splitting the integers and applying
-		// the algorithm on the parts.
+		}
 
 		else {
 			int m, m2;
@@ -59,12 +54,12 @@ public class KaratsubaTriplo {
 			String z0 = karatsuba(low1, low2);
 			String z2 = karatsuba(high1, high2);
 			String sumLowHigh1 = addStrings(low1, high1);
-        String sumLowHigh2 = addStrings(low2, high2);
-        
-        String z1 = subtractStrings(subtractStrings(karatsuba(sumLowHigh1, sumLowHigh2), z2), z0);
-        
-        return addStrings(addStrings(shiftLeft(z2, 2 * m2), shiftLeft(z1, m2)), z0);
-    }
+			String sumLowHigh2 = addStrings(low2, high2);
+
+			String z1 = subtractStrings(subtractStrings(karatsuba(sumLowHigh1, sumLowHigh2), z2), z0);
+
+			return addStrings(addStrings(shiftLeft(z2, 2 * m2), shiftLeft(z1, m2)), z0);
+		}
 	}
 
 	public static String addStrings(String num1, String num2) {
@@ -72,7 +67,7 @@ public class KaratsubaTriplo {
 		int carry = 0;
 		int i = num1.length() - 1;
 		int j = num2.length() - 1;
-	
+
 		while (i >= 0 || j >= 0 || carry > 0) {
 			int sum = carry;
 			if (i >= 0) {
@@ -84,7 +79,7 @@ public class KaratsubaTriplo {
 			carry = sum / 10;
 			result.insert(0, sum % 10);
 		}
-	
+
 		return result.toString();
 	}
 
@@ -93,7 +88,7 @@ public class KaratsubaTriplo {
 		int borrow = 0;
 		int i = num1.length() - 1;
 		int j = num2.length() - 1;
-	
+
 		while (i >= 0 || j >= 0) {
 			int diff = borrow;
 			if (i >= 0) {
@@ -110,7 +105,7 @@ public class KaratsubaTriplo {
 			}
 			result.insert(0, diff);
 		}
-	
+
 		return result.toString();
 	}
 
@@ -124,8 +119,8 @@ public class KaratsubaTriplo {
 
 	public static void main(String[] args) {
 
-		//System.out.println(karatsuba("200", "200"));
-		System.out.println(karatsuba("20000", "200"));
-		//System.out.println(karatsuba("12432134341245674745675476", "7054920058988836008343024"));
+		System.out.println(karatsuba("999999999", "9000000000"));
+		// System.out.println(karatsuba("12345", "6789"));
+		System.out.println(karatsuba("12432134341245674745675476","7054920058988836008343024"));
 	}
 }

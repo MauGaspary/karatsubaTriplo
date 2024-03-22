@@ -29,17 +29,10 @@ public class KaratsubaTriplo {
 		}
 	}
 
-	// public static String karatsuba(String x, String y, String z) {
-	// return null;
-
-	// }
-
 	public static String karatsuba(String x, String y) {
-		// Base case: single digit multiplication
 		if (x.length() == 1 || y.length() == 1) {
 			int prod = Integer.parseInt(x) * Integer.parseInt(y);
 			return String.valueOf(prod);
-
 		}
 
 		else {
@@ -119,8 +112,8 @@ public class KaratsubaTriplo {
 
 	public static void main(String[] args) {
 
-		System.out.println(karatsuba("999999999", "9000000000"));
-		// System.out.println(karatsuba("12345", "6789"));
+		//System.out.println(karatsuba("99999999999999", "9999999999"));
+		//System.out.println(karatsuba("12345", "6789"));
 		System.out.println(karatsuba("12432134341245674745675476","7054920058988836008343024"));
 	}
 }
